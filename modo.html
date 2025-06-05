@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleccionar Modo</title>
+  <link rel="stylesheet" href="ProyectoXO.css">
+</head>
+<body>
+  <div id="selectorModo" class="pantalla">
+    <img src="assets/fondos/modo.gif" class="fondo-intro" alt="Fondo de modo">
+    <div class="intro-contenido">
+      <h2>Selecciona el modo de juego</h2>
+      <form id="modoForm" class="form_modo" action="juego.html" method="get">
+        <label class="select" for="modo">Modo:</label>
+        <select class="select" name="modo" id="modo" required>
+          <option value="vsBot">Jugador vs Bot</option>
+          <option value="vsJugador">Jugador vs Jugador</option>
+        </select>
+
+        <label for="jugador1">Jugador 1:</label>
+        <select class="select" name="jugador1" id="jugador1" required></select>
+
+        <label for="jugador2">Jugador 2 / Bot:</label>
+        <select class="select" name="jugador2" id="jugador2" required></select>
+
+        <button type="submit">Iniciar Juego</button>
+      </form>
+      <p id="errorMensaje" style="display: none; color: red;">Los jugadores no pueden elegir el mismo ícono. Por favor, selecciona íconos diferentes.</p>
+    </div>
+  </div>
+
+  <script>
+    const iconos = [
+      "gato tom.png", "gengar.png", "hedwig.png", "hellokitty.png", "hongomario.png",
+      "ironman.png", "Jujutsu kaisen Gojo.png", "kevin.png", "mario.png", "mate.png",
+      "mike.png", "naruto.png", "nezuko.png", "pacman.png", "pikachu.png",
+      "psyduck.png", "rayo.png", "scrooge.png", "shinchan.png", "snoopy.png",
+      "spiderman.png", "tanjiro.png", "totoro.png", "woody.png", "batman.png",
+      "boo.png", "BuzzLightyear.png", "cactus.png", "calamardo.png", "capibara.png",
+      "ferrariF1.png", "finn.png", "fresa.png", "garfield.png", "gary.png", "gato con botas.png"
+    ];
+
+    function cargarAvatares(id) {
+      const select = document.getElementById(id);
+      iconos.forEach(icono => {
+        const option = document.createElement("option");
+        option.value = `assets/iconos/${encodeURIComponent(icono)}`;
+        option.textContent = icono.replace(".png", "");
+        select.appendChild(option);
+      });
+    }
+
+    window.onload = () => {
+      cargarAvatares("jugador1");
+      cargarAvatares("jugador2");
+
+      const form = document.getElementById('modoForm');
+      form.addEventListener('submit', function(event) {
+        const jugador1 = document.getElementById('jugador1').value;
+        const jugador2 = document.getElementById('jugador2').value;
+
+        if (jugador1 === jugador2) {
+          event.preventDefault(); 
+          document.getElementById('errorMensaje').style.display = 'block';
+        } else {
+          document.getElementById('errorMensaje').style.display = 'none';
+        }
+      });
+    };
+  </script>
+</body>
+</html>

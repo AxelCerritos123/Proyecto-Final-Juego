@@ -1,0 +1,3 @@
+En caso de que no poder ver los iconos, fondos y los settings, crear una carpeta donde se inserten todos los archivos y crear otra carpeta dentro de la misma junto con los otros archivos (index.html, juego.html, modo.html, ProyectoXO.css,ProyectoXO.js):
+
+La carpeta se llamara assets donde iran otras dos carpetas: iconos donde iran los iconos y otra fondos donde iran los fondos (archivos comprimidos en .zip)

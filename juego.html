@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto XO</title>
+  <link rel="stylesheet" href="ProyectoXO.css">
+  <script src="ProyectoXO.js" defer></script>
+</head>
+<body>
+  <!-- INTEGRANTES -->
+  <!--
+    -Axel Enrique Cerritos Torres
+    -Cristopher Mauricio Cerritos Espino
+    -Carlos Alfredo Vejar Noguera
+    -Jeferson Alessandro Velasquez Rivera
+    -Marlin Yolanda Afane Vasquez
+    -Christopher Alexander Gonzalez Alvarado
+    -Josselyn Michelle Dimas Hernandez
+  -->
+
+
+  <div id="juego" class="pantalla">
+    <img src="assets/fondos/modo.gif" class="fondo-intro" alt="Fondo del juego">
+
+    <div class="intro-contenido">
+
+      <!-- MODO -->
+      <h2 id="modoSeleccionado">Modo: </h2>
+
+
+      <!-- TURNOS -->
+      <div style="display: flex; justify-content: center;">
+        <p style="margin-right: 5px;">Turno:</p>
+        <p id="turnoActual">Jugador 1</p>
+      </div>
+      
+
+      <!-- TABLERO -->
+      <section id="tablero">
+        
+      </section>
+
+
+      <!-- MENSAJE -->
+      <p id="mensajeResultado"></p>
+      <button id="btnCambiarModo">Cambiar Modo</button>
+      <button id="btnReiniciar">Reiniciar</button>
+
+
+      <!-- CONTADORES -->
+      <div>
+        <p>Victorias Jugador 1: <span id="victoriasJ1">0</span></p>
+        <p>Victorias Jugador 2/Bot: <span id="victoriasJ2">0</span></p>
+        <p>Empates: <span id="empates">0</span></p>
+      </div>
+
+      
+      <!-- REINICIAR JUEGO -->
+      <section class="finJuego" id="finJuego">
+        <div class="finJuegoShow" >
+            <h1 class="finJuego_result" id="finJuego_result"></h1>
+            <p>¿Quieres volver a jugar?</p>
+            <button id="btnFinJuego">Volver a Jugar</button>
+            <button id="btnMenu">Volver al Menu</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
